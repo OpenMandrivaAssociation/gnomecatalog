@@ -11,6 +11,7 @@ Source0: %{name}_%{version}-%frel.tar.bz2
 License: GPL
 Group: Archiving/Other
 Url: http://gnomecatalog.sf.net
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: python-devel
 BuildRequires: ImageMagick
 BuildRequires: desktop-file-utils
