@@ -36,13 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 python setup.py install --root %buildroot
 %find_lang %name
 rm -rf %buildroot%_prefix/lib/mime 
-mkdir -p $RPM_BUILD_ROOT/%{_menudir}
 
-cat << EOF > $RPM_BUILD_ROOT/%{_menudir}/%{name}
-?package(%{name}):command="%{_bindir}/%{name}" icon="%{name}.png" \
-  needs="x11" section="System/Archiving/Other" title="GNOME Catalog" \
-  longtitle="Make disk/CD catalogs" mimetypes="application/x-gnomecatalog" xdg="true"
-EOF
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-category="X-MandrivaLinux-System-Archiving-Other" \
@@ -82,7 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/mime/packages/*
 %_datadir/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-gcatalog.png
 %py_puresitedir/*
-%_menudir/%name
 %_liconsdir/%name.png
 %_iconsdir/%name.png
 %_miconsdir/%name.png
