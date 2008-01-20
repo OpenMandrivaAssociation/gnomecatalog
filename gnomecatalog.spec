@@ -1,13 +1,12 @@
 %define name gnomecatalog
-%define version 0.2.1
-%define release %mkrel 3
-%define frel 1
+%define version 0.3.4
+%define release %mkrel 1
 
 Summary: CD-ROM catalog for GNOME
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: %{name}_%{version}-%frel.tar.bz2
+Source0: %{name}-%{version}.tar.gz
 License: GPL
 Group: Archiving/Other
 Url: http://gnomecatalog.sf.net
@@ -16,9 +15,11 @@ BuildRequires: python-devel
 BuildRequires: ImageMagick
 BuildRequires: desktop-file-utils
 BuildArch: noarch
+Requires: python-kaa-metadata
 Requires: pygtk2.0 pygtk2.0-libglade gnome-python-gconf
 Requires: gnome-python gnome-python-gnomevfs
 Requires: gnome-python-gtkhtml2 python-sqlite2
+
 Requires(post): desktop-file-utils, shared-mime-info
 Requires(postun): desktop-file-utils, shared-mime-info
 
@@ -26,7 +27,7 @@ Requires(postun): desktop-file-utils, shared-mime-info
 CD-ROM catalog for GNOME.
 
 %prep
-%setup -q -n %name
+%setup -q -n %name-%{version}.orig
 
 %build
 python setup.py build
@@ -48,7 +49,6 @@ mkdir -p $RPM_BUILD_ROOT/%{_liconsdir}
 convert -scale 32 share/pixmaps/gcatalog.png %buildroot%_iconsdir/%name.png
 convert -scale 16 share/pixmaps/gcatalog.png %buildroot%_miconsdir/%name.png
 install share/pixmaps/gcatalog.png %buildroot%_liconsdir/%name.png
-mv %buildroot%_datadir/icons/Default/ %buildroot%_datadir/icons/hicolor
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -69,6 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc README
 %_bindir/%name
+%_mandir/man1/*.1*
 %_datadir/%name
 %_datadir/application-registry/*
 %_datadir/applications/*
