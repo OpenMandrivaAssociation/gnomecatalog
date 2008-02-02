@@ -1,6 +1,6 @@
 %define name gnomecatalog
 %define version 0.3.4
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: CD-ROM catalog for GNOME
 Name: %{name}
@@ -15,6 +15,7 @@ BuildRequires: python-devel
 BuildRequires: ImageMagick
 BuildRequires: desktop-file-utils
 BuildArch: noarch
+Requires: pyvorbis
 Requires: python-kaa-metadata
 Requires: pygtk2.0 pygtk2.0-libglade gnome-python-gconf
 Requires: gnome-python gnome-python-gnomevfs
