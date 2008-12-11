@@ -12,7 +12,7 @@ Group: Archiving/Other
 Url: http://gnomecatalog.sf.net
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: python-devel
-BuildRequires: ImageMagick
+BuildRequires: imagemagick
 BuildRequires: desktop-file-utils
 BuildArch: noarch
 Requires: pyvorbis
