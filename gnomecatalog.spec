@@ -1,12 +1,12 @@
 %define name gnomecatalog
-%define version 0.3.4.1
-%define release %mkrel 3
+%define version 0.3.4.2
+%define release %mkrel 1
 
 Summary: CD-ROM catalog for GNOME
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: %{name}_%{version}.tar.gz
+Source0: %{name}-%{version}.tar.bz2
 License: GPL
 Group: Archiving/Other
 Url: http://gnomecatalog.sf.net
@@ -28,7 +28,7 @@ Requires(postun): desktop-file-utils, shared-mime-info
 CD-ROM catalog for GNOME.
 
 %prep
-%setup -q -n %{name}-%{version}.orig
+%setup -q
 
 %build
 python setup.py build
