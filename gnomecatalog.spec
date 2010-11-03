@@ -1,6 +1,6 @@
 %define name gnomecatalog
 %define version 0.3.4.2
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: CD-ROM catalog for GNOME
 Name: %{name}
