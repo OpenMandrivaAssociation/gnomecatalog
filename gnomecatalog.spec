@@ -9,7 +9,7 @@ Release: %{release}
 Source0: %{name}-%{version}.tar.bz2
 License: GPL
 Group: Archiving/Other
-Url: http://gnomecatalog.sf.net
+Url: https://gnomecatalog.sf.net
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: python-devel
 BuildRequires: imagemagick
